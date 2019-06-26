@@ -1,21 +1,40 @@
 
-<header class="navbar navbar-fixed-top navbar-inverse">
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" href="../../stylesheets/home.scss">
+</head>
+<!-- style="background-color: #f56f0f -->
+<body>
+<header class="navbar navbar-fixed-top navbar-inverse navbar-dark bg-primary">
 	<div class="navbar-inner">
-		<% if current_user %>
-			Logged in as <%= current_user.email %>.
-		<%= link_to "Log Out", logout_path %>
-		<% else %>
-		<div>
-		<%= link_to "Sign Up", signup_path %> or
-		<%= link_to "Log In", login_path %>
-		<% end %>
+		<div class="container">
+			<nav class="barra-nav">
+
+				<p class="titulo">Empresta UFSCar</p>
+				<ul class="pull-right">
+					<% if current_user %>
+						Logged in as <%= current_user.email %>.
+					<%= link_to "Log Out", logout_path %>
+					<% else %>
+						<%= link_to "Sign Up", signup_path %> or
+						<%= link_to "Log In", login_path %>
+					<% end %>
+				</ul>
+			</nav>
+		</div>
 	</div>
 </header>
-<p id=”notice”><%= notice %></p>
-
-<h1>Empresta UFSCar</h1>
-<p>Faça login ou crie sua conta para emprestar itens!</p>
 
 
+<div class="conteudo">
+	<img class="imagem" src="https://www.cpp.org.br/media/k2/items/cache/b4e8bec3ce7a0815b1c19d3fb5388312_XL.jpg">
+	<p id=”notice”><%= notice %></p>
 
+	<span class="texto">
+		<h1>Empresta UFSCar</h1>
+		<p>Faça login ou crie sua conta para emprestar itens!</p>
+	</span>
+</div>
+
+</body>
  </html>

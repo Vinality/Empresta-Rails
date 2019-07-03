@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#create', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
+  get 'emprestar', to: 'products#new', as: 'emprestar'
   get 'empresta', to: 'products#index', as: 'empresta'
 
 end

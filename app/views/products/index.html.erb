@@ -1,30 +1,55 @@
 <link rel="stylesheet" href="app/assets/stylesheets/products.scss" /> 
 
-<p id="notice"><%= notice %></p>
+<header class="navbar navbar-fixed-top navbar-inverse navbar-dark bg-primary">
+    <div class="navbar-inner">
+        <div class="container">
+            <nav class="barra-nav">
+
+                <p class="titulo">Empresta UFSCar</p>
+                <%= link_to "Emprestar", empresta_path %>
+                <%= link_to "Preciso disso",  emprestar_path %>
+                <%= link_to "O que emprestei", logout_path %>
+                <ul class="pull-right">
+                    <% if current_user %>
+                        Logged in as <%= current_user.email %>.
+                    <%= link_to "Log Out", logout_path %>
+                    <% else %>
+                        <%= link_to "Sign Up", signup_path %> or
+                        <%= link_to "Log In", login_path %>
+                    <% end %>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header> 
+
+<br>
+<br>
+<br>
 
 <h1 style="text-align: center;">Produtos</h1>
     
-    <div id="main">
+<div id="main">
 
-        <% @products.each do |product| %>
+    <% @products.each do |product| %>
 
-        <div class="container-card">
-            <div class="card" style="width: 18rem;">
-                <%= link_to image_tag("ufszinha.jpg", size: "165x120")  %>
-                <div class="card-body" style="margin-left: 10px; margin-right: 10px;">
-                    <h3 class="card-title" style="text-align: center;"> <%= product.name %> </h3>
-                    <!-- <div align="center"> <a href="#" class="btn btn-primary"> Go somewhere </a> </div> -->
-                </div>
-            </div>
-
-            <div class="card-descricao">
-                <p class="card-text"> <%= product.description %> </p>
+    <div class="container-card">
+        <div class="card" style="width: 18rem;">
+            <%= link_to image_tag("ufszinha.jpg", size: "165x120")  %>
+            <div class="card-body" style="margin-left: 10px; margin-right: 10px;">
+                <h3 class="card-title" style="text-align: center;"> <%= product.name %> </h3>
+                <!-- <div align="center"> <a href="#" class="btn btn-primary"> Go somewhere </a> </div> -->
             </div>
         </div>
 
-        <% end %>
-    
+        <div class="card-descricao">
+            <p class="card-text"> <%= product.description %> </p>
+        </div>
     </div>
+
+    <% end %>
+
+</div>
 <br>
 
 <div align="center"><%= link_to 'New Product', new_product_path %> </div>

@@ -1,9 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<div id="show-email">
+<p id="id-email">
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
 
+<p id="id-email2">Cadastro realizado com sucesso!</p>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+</div>

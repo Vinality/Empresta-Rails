@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 2019_07_03_121841) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "product_id"
     t.index ["name"], name: "index_products_on_name", unique: true
   end
 

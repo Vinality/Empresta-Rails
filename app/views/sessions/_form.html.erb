@@ -1,4 +1,32 @@
-<link rel="stylesheet" href="app/assets/stylesheets/users.scss" /> 
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" href="../../stylesheets/home.scss">
+<link rel="stylesheet" href="app/assets/stylesheets/users.scss" />
+</head>
+<!-- style="background-color: #f56f0f -->
+<body>
+<header class="navbar navbar-fixed-top navbar-inverse navbar-dark bg-primary">
+	<div class="navbar-inner">
+		<div class="container">
+			<nav class="barra-nav">
+
+				<p class="titulo">Empresta UFSCar</p>
+				<%= link_to "Emprestar", empresta_path %>
+				<%= link_to "Preciso disso",  emprestar_path %>
+				<%= link_to "O que emprestei", logout_path %>
+				<ul class="pull-right">
+					<% if current_user %>
+						Logged in as <%= current_user.email %>.
+					<%= link_to "Log Out", logout_path %>
+					<% else %>
+						<%= link_to "Sign Up", signup_path %> or
+						<%= link_to "Log In", login_path %>
+					<% end %>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header> 
 <%= form_with(model: user, local: true) do |form| %>
   <div class="login-page">
     <div class="form">

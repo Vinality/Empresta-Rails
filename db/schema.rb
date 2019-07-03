@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_26_170337) do
+ActiveRecord::Schema.define(version: 2019_07_03_121841) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "emprestimos", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "products_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["products_id"], name: "index_emprestimos_on_products_id"
+    t.index ["user_id"], name: "index_emprestimos_on_user_id"
+  end
 
   create_table "products", force: :cascade do |t|
     t.string "name"
@@ -21,6 +30,7 @@ ActiveRecord::Schema.define(version: 2019_06_26_170337) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "product_id"
     t.index ["name"], name: "index_products_on_name", unique: true
   end
 
@@ -32,4 +42,6 @@ ActiveRecord::Schema.define(version: 2019_06_26_170337) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "emprestimos", "products", column: "products_id"
+  add_foreign_key "emprestimos", "users"
 end

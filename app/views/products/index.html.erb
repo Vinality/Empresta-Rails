@@ -45,7 +45,7 @@
             <p class="card-text"> <%= product.description %> </p>
         </div>
 
-        <div style="float: right; margin: auto; margin-left: 20px;"> <%= button_to 'Emprestar',empresta_produto_path,  method: :get, data: { user: @user, product: @product }  %> </div>
+        <div style="float: right; margin: auto; margin-left: 20px;"> <%= button_to 'Emprestar',empresta_produto_path,  method: :get, data: { user: current_user, product: product.id } %> </div>
 
     </div>
 
@@ -53,4 +53,4 @@
 
 </div>
 <br> <br><br>
-<div align="center"> <button> <%= link_to 'New Product', new_product_path %> </button> </div>
+<div align="center"> <button> <%= link_to 'Novo produto', new_product_path %> </button> </div>

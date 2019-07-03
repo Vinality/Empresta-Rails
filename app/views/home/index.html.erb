@@ -8,20 +8,22 @@
 	<div class="navbar-inner">
 		<div class="container">
 			<nav class="barra-nav">
-
 				<p class="titulo">Empresta UFSCar</p>
-				<%= link_to "Emprestar", empresta_path %>
-				<%= link_to "Preciso disso",  emprestar_path %>
-				<%= link_to "O que emprestei", logout_path %>
-				<ul class="pull-right">
-					<% if current_user %>
+				<% if current_user %>
+					<%= link_to "Emprestar", empresta_path %>
+					<%= link_to "Preciso disso",  emprestar_path %>
+					<%= link_to "O que emprestei", logout_path %>
+					<ul class="pull-right">
 						Logged in as <%= current_user.email %>.
-					<%= link_to "Log Out", logout_path %>
-					<% else %>
-						<%= link_to "Sign Up", signup_path %> or
-						<%= link_to "Log In", login_path %>
-					<% end %>
+						<%= link_to "Log Out", logout_path %>
+					</ul>
+				<% else %>
+
+				<ul class="pull-right">
+					<%= link_to "Sign Up", signup_path %> or
+					<%= link_to "Log In", login_path %>
 				</ul>
+				<% end %>
 			</nav>
 		</div>
 	</div>

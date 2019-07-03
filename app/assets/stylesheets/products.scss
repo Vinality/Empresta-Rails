@@ -3,9 +3,28 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #main {
-	margin-left: 20%;
-	margin-right: 20%;
-	display: inline-flex;
+	margin-left: 15%;
+	margin-right: 15%;
+}
+
+.container-card {
+	margin-left: 15%;
+	margin-right: 15%;
+	width: 60%;
 	border-color: red;
 	border-style: 2px solid;
+	display: inline-flex;
+}
+
+.card {
+	padding: 5px;
+	border: 1px solid rgb(215, 215, 215);
+  	float: left;
+}
+
+.card-descricao {
+	float: right;
+	width: 100%;
+	padding: 5px;
+	border: 1px solid rgb(215, 215, 215);
 }

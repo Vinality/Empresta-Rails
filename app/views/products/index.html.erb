@@ -38,18 +38,19 @@
             <%= link_to image_tag("ufszinha.jpg", size: "165x120")  %>
             <div class="card-body" style="margin-left: 10px; margin-right: 10px;">
                 <h3 class="card-title" style="text-align: center;"> <%= product.name %> </h3>
-                <!-- <div align="center"> <a href="#" class="btn btn-primary"> Go somewhere </a> </div> -->
             </div>
         </div>
 
         <div class="card-descricao">
             <p class="card-text"> <%= product.description %> </p>
         </div>
+
+        <div style="float: right; margin: auto; margin-left: 20px;"> <%= button_to 'Emprestar',empresta_produto_path,  method: :get, data: { user: @user, product: @product }  %> </div>
+
     </div>
 
     <% end %>
 
 </div>
-<br>
-
-<div align="center"><%= link_to 'New Product', new_product_path %> </div>
+<br> <br><br>
+<div align="center"> <button> <%= link_to 'New Product', new_product_path %> </button> </div>

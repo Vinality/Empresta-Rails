@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :products
+  resources :emprestimo
   resources :sessions, only: [:new, :create, :destroy]
 
   
@@ -12,5 +13,6 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get 'emprestar', to: 'products#new', as: 'emprestar'
   get 'empresta', to: 'products#index', as: 'empresta'
+  get 'empresta_produto', to: 'emprestimo#create', as: 'empresta_produto'
 
 end
